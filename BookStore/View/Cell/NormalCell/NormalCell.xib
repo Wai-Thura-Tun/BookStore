@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="572" id="KGk-i7-Jjw" customClass="NormalCell" customModule="BookStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="572"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="380" height="572"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_1" translatesAutoresizingMaskIntoConstraints="NO" id="FCA-W9-glw">
+                        <rect key="frame" x="20" y="0.0" width="128" height="199.66666666666666"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="FCA-W9-glw" secondAttribute="height" multiplier="370:577" id="X13-gZ-5fq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY5-1V-puB">
+                        <rect key="frame" x="20" y="0.0" width="128" height="199.66666666666666"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-IN-0hq">
+                                <rect key="frame" x="10" y="126.66666666666667" width="108" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX0-RD-KIS">
+                                <rect key="frame" x="10" y="160.33333333333334" width="108" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XX0-RD-KIS" firstAttribute="top" secondItem="4LI-IN-0hq" secondAttribute="bottom" constant="5" id="byg-6y-V5J"/>
+                            <constraint firstItem="XX0-RD-KIS" firstAttribute="trailing" secondItem="4LI-IN-0hq" secondAttribute="trailing" id="ctu-Ph-vRl"/>
+                            <constraint firstItem="4LI-IN-0hq" firstAttribute="leading" secondItem="rY5-1V-puB" secondAttribute="leading" constant="10" id="hMn-NM-izz"/>
+                            <constraint firstItem="XX0-RD-KIS" firstAttribute="leading" secondItem="4LI-IN-0hq" secondAttribute="leading" id="j5f-nm-OGN"/>
+                            <constraint firstAttribute="trailing" secondItem="4LI-IN-0hq" secondAttribute="trailing" constant="10" id="qDI-wx-Dki"/>
+                            <constraint firstAttribute="bottom" secondItem="XX0-RD-KIS" secondAttribute="bottom" constant="20" id="wJc-kd-35b"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="trailing" secondItem="FCA-W9-glw" secondAttribute="trailing" id="BHa-OH-CXx"/>
+                    <constraint firstItem="FCA-W9-glw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Dfw-93-3bo"/>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="bottom" secondItem="FCA-W9-glw" secondAttribute="bottom" id="Jq1-KE-Vg5"/>
+                    <constraint firstItem="FCA-W9-glw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KaI-al-UGh"/>
+                    <constraint firstAttribute="trailing" secondItem="FCA-W9-glw" secondAttribute="trailing" constant="20" id="Nd1-qb-6ZH"/>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="height" secondItem="FCA-W9-glw" secondAttribute="height" id="QYJ-QH-KMc"/>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="width" secondItem="FCA-W9-glw" secondAttribute="width" id="SY5-zz-PFy"/>
+                    <constraint firstAttribute="bottom" secondItem="FCA-W9-glw" secondAttribute="bottom" constant="20" id="W3u-7y-Nl0"/>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="leading" secondItem="FCA-W9-glw" secondAttribute="leading" id="brv-XX-chT"/>
+                    <constraint firstItem="rY5-1V-puB" firstAttribute="top" secondItem="FCA-W9-glw" secondAttribute="top" id="rrn-sp-6cb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="56.488549618320612" y="205.63380281690141"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="book_1" width="84.333335876464844" height="131.33332824707031"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

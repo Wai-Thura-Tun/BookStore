@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GridItemCell" customModule="BookStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="261"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="261"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPD-iA-HPH">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="261"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_1" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-JQ-NZR">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="261"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nRs-JQ-NZR" firstAttribute="top" secondItem="EPD-iA-HPH" secondAttribute="top" id="6UC-he-gzp"/>
+                            <constraint firstAttribute="bottom" secondItem="nRs-JQ-NZR" secondAttribute="bottom" id="Hh1-39-NBV"/>
+                            <constraint firstAttribute="trailing" secondItem="nRs-JQ-NZR" secondAttribute="trailing" id="UEa-MC-Q14"/>
+                            <constraint firstItem="nRs-JQ-NZR" firstAttribute="leading" secondItem="EPD-iA-HPH" secondAttribute="leading" id="mjZ-RM-Inc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EPD-iA-HPH" secondAttribute="bottom" id="7Bb-gk-RSu"/>
+                <constraint firstAttribute="trailing" secondItem="EPD-iA-HPH" secondAttribute="trailing" id="YhV-9H-W1Z"/>
+                <constraint firstItem="EPD-iA-HPH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pLd-VX-ZZf"/>
+                <constraint firstItem="EPD-iA-HPH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qjn-rX-Loi"/>
+            </constraints>
+            <size key="customSize" width="180" height="261"/>
+            <point key="canvasLocation" x="155.72519083969465" y="94.718309859154928"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="book_1" width="84.333335876464844" height="131.33332824707031"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
