@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class DynamicHeightCV: UICollectionView {
-    
     override func reloadData() {
         super.reloadData()
         self.layoutIfNeeded()
