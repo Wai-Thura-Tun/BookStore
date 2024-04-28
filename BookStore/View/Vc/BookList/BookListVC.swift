@@ -7,8 +7,10 @@
 
 import UIKit
 
-class BookListVC: UIViewController {
+class BookListVC: UIViewController, StoryBoarded {
 
+    static var storyboardName: String = "Home"
+    
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var tbBookList: UITableView!
     
