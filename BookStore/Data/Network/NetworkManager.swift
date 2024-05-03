@@ -16,6 +16,7 @@ class NetworkManager {
     func fetchData<T: Codable>(
         url: URL,
         method: String = "GET",
+        requestBody: Encodable? = nil,
         contentType: String = "application/json",
         onSuccess: @escaping (T) -> Void,
         onFailed: @escaping (String) -> Void
@@ -23,6 +24,13 @@ class NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        
+        if let requestBody = requestBody {
+            let data = try? JSONEncoder().encode(requestBody)
+            if let data = data {
+                request.httpBody = data
+            }
+        }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
