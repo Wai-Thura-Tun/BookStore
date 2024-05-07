@@ -144,6 +144,12 @@ extension RegisterVC: RegisterViewDelegate {
         }
     }
     
+    func onOldUser() {
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     private func showError(error message: String) {
         let alertController = UIAlertController.init(title: "Error",
                                                      message: message,

@@ -11,6 +11,7 @@ protocol RegisterViewDelegate {
     func onValidate(validationErrors: [RegisterVM.FormInput])
     func onError(error: String)
     func onRegisterLogin()
+    func onOldUser()
 }
 
 class RegisterVM {
@@ -70,22 +71,31 @@ class RegisterVM {
     }
     
     func register() {
-        let requestBody: RegisterRequest = .init(userName: userName!, email: email!, phoneNumber: phoneNumber!, password: password!)
-        let url = URL(string: "http://54.179.102.152/api/auth/register_user")!
-        network.fetchData(url: url,
-                          method: "POST",
-                          requestBody: requestBody) { [weak self] (response: RegisterResponse) in
+        network.request(endPoint: .Register(RegisterRequest.init(userName: userName!, email: email!, phoneNumber: phoneNumber!, password: password!))) { [weak self] (response: RegisterResponse) in
             if response.code == 201 {
-                if let accessToken = response.data?.accessToken {
-                    UserDefaults.setAccessToken(token: accessToken)
+                if let token = response.data?.accessToken {
+                    UserDefaults.setAccessToken(token: token)
                     self?.delegate.onRegisterLogin()
+                }
+                else {
+                    self?.delegate.onError(error: "Something went wrong")
                 }
             }
             else {
                 self?.delegate.onError(error: response.message ?? "Something went wrong")
             }
         } onFailed: { [weak self] error in
-            self?.delegate.onError(error: error)
+            switch error {
+            case .UNEXPECTED_STATUS_CODE(let code):
+                if code == 409 {
+                    self?.delegate.onOldUser()
+                }
+                else {
+                    self?.delegate.onError(error: "Something went wrong")
+                }
+            default:
+                self?.delegate.onError(error: "Something went wrong")
+            }
         }
 
     }

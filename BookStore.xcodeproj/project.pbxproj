@@ -22,6 +22,11 @@
 		065952B72BE35FC700363518 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B62BE35FC700363518 /* RegisterRequest.swift */; };
 		065952B92BE3634700363518 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B82BE3634700363518 /* LoginVM.swift */; };
 		065952BB2BE3635100363518 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952BA2BE3635100363518 /* RegisterVM.swift */; };
+		065952C72BE88C4600363518 /* BookStoreEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C62BE88C4600363518 /* BookStoreEndPoint.swift */; };
+		065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C82BE88C5500363518 /* HTTPMethod.swift */; };
+		065952CB2BE88C6200363518 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CA2BE88C6200363518 /* EndPoint.swift */; };
+		065952CD2BE88D2E00363518 /* HTTPEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CC2BE88D2E00363518 /* HTTPEncoding.swift */; };
+		065952CF2BE8B16700363518 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CE2BE8B16700363518 /* NetworkError.swift */; };
 		06C7FAB02BD2DAD90004CDD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAAF2BD2DAD90004CDD5 /* AppDelegate.swift */; };
 		06C7FAB22BD2DAD90004CDD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAB12BD2DAD90004CDD5 /* SceneDelegate.swift */; };
 		06C7FAB72BD2DADA0004CDD5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 06C7FAB62BD2DADA0004CDD5 /* Base */; };
@@ -62,6 +67,11 @@
 		065952B62BE35FC700363518 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		065952B82BE3634700363518 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		065952BA2BE3635100363518 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		065952C62BE88C4600363518 /* BookStoreEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreEndPoint.swift; sourceTree = "<group>"; };
+		065952C82BE88C5500363518 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		065952CA2BE88C6200363518 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		065952CC2BE88D2E00363518 /* HTTPEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEncoding.swift; sourceTree = "<group>"; };
+		065952CE2BE8B16700363518 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		06C7FAAC2BD2DAD90004CDD5 /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C7FAAF2BD2DAD90004CDD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C7FAB12BD2DAD90004CDD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +165,11 @@
 			isa = PBXGroup;
 			children = (
 				061C68582BDE194D00F0C7C3 /* NetworkManager.swift */,
+				065952CE2BE8B16700363518 /* NetworkError.swift */,
+				065952CA2BE88C6200363518 /* EndPoint.swift */,
+				065952CC2BE88D2E00363518 /* HTTPEncoding.swift */,
+				065952C82BE88C5500363518 /* HTTPMethod.swift */,
+				065952C62BE88C4600363518 /* BookStoreEndPoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -459,12 +474,15 @@
 				061C68592BDE194D00F0C7C3 /* NetworkManager.swift in Sources */,
 				06C7FACC2BD2DB760004CDD5 /* Book.swift in Sources */,
 				06C7FAE42BD3933B0004CDD5 /* BannerCell.swift in Sources */,
+				065952C72BE88C4600363518 /* BookStoreEndPoint.swift in Sources */,
 				065952BB2BE3635100363518 /* RegisterVM.swift in Sources */,
 				061C68482BDE099900F0C7C3 /* LoginVC.swift in Sources */,
 				061C68562BDE141700F0C7C3 /* UITextField.swift in Sources */,
 				06C7FAB02BD2DAD90004CDD5 /* AppDelegate.swift in Sources */,
 				061C684E2BDE0A4C00F0C7C3 /* UserDefultsManager.swift in Sources */,
+				065952CF2BE8B16700363518 /* NetworkError.swift in Sources */,
 				06C7FACE2BD2E0F70004CDD5 /* BookListVC.swift in Sources */,
+				065952CD2BE88D2E00363518 /* HTTPEncoding.swift in Sources */,
 				06C7FADA2BD3833B0004CDD5 /* CarouselCell.swift in Sources */,
 				06C7FADF2BD383B40004CDD5 /* CarouselItemCell.swift in Sources */,
 				065952AD2BE35AD800363518 /* RegisterVC.swift in Sources */,
@@ -478,8 +496,10 @@
 				06C7FAEE2BD39CE30004CDD5 /* GridCell.swift in Sources */,
 				065952B32BE35FA600363518 /* RegisterResponse.swift in Sources */,
 				065952B92BE3634700363518 /* LoginVM.swift in Sources */,
+				065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */,
 				06C7FAF62BD39DCC0004CDD5 /* DynamicHeightCV.swift in Sources */,
 				061C684C2BDE09B300F0C7C3 /* RootNC.swift in Sources */,
+				065952CB2BE88C6200363518 /* EndPoint.swift in Sources */,
 				065952B52BE35FBD00363518 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

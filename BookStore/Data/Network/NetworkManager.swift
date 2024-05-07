@@ -13,28 +13,41 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData<T: Codable>(
-        url: URL,
-        method: String = "GET",
-        requestBody: Encodable? = nil,
-        contentType: String = "application/json",
+    func request<T: Codable>(
+        endPoint: BookStoreEndPoint,
         onSuccess: @escaping (T) -> Void,
-        onFailed: @escaping (String) -> Void
+        onFailed: @escaping (NetworkError) -> Void
     ) {
-        var request = URLRequest(url: url)
-        request.httpMethod = method
-        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        let url = try? endPoint.asURL()
         
-        if let requestBody = requestBody {
-            let data = try? JSONEncoder().encode(requestBody)
-            if let data = data {
+        guard let url = url else {
+            onFailed(.INVALID_URL)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = endPoint.method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let token = UserDefaults.getAccessToken(), !token.isEmpty {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        if let requestBody = endPoint.parameter {
+            switch endPoint.encoding {
+            case .JSON:
+                let data = try? JSONSerialization.data(withJSONObject: requestBody)
                 request.httpBody = data
+            case .QUERY_STRING:
+                request.url?.append(queryItems: requestBody.map {
+                    URLQueryItem(name: $0.key, value: $0.value as? String)
+                })
             }
         }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                onFailed(error.localizedDescription)
+                onFailed(.UNKNOWN)
             }
             else {
                 if let statusCode = (response as? HTTPURLResponse)?.statusCode {
@@ -45,19 +58,19 @@ class NetworkManager {
                                 onSuccess(object)
                             }
                             else {
-                                onFailed("Cannot parse response data")
+                                onFailed(.DECODE_ERROR)
                             }
                         }
                         else {
-                            onFailed("Response data empty")
+                            onFailed(.EMPTY_RESPONSE)
                         }
                     }
                     else {
-                        onFailed("Status Code : \(statusCode)")
+                        onFailed(.UNEXPECTED_STATUS_CODE(statusCode))
                     }
                 }
                 else {
-                    onFailed("Invalid Status Code")
+                    onFailed(.EMPTY_RESPONSE)
                 }
             }
         }.resume()

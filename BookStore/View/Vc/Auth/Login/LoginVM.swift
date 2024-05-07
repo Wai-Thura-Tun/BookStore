@@ -11,6 +11,7 @@ protocol LoginViewDelegate {
     func onValidate(validationErrors: [LoginVM.FormInput])
     func onError(error: String)
     func onLoginSuccess()
+    func onNewUser()
 }
 
 class LoginVM {
@@ -48,14 +49,10 @@ class LoginVM {
     }
     
     func login() {
-        let url = URL(string: "http://54.179.102.152/api/auth/login")!
-        let requestBody: LoginRequest = .init(userName: userName!, password: password!)
-        network.fetchData(url: url,
-                          method: "POST",
-                          requestBody: requestBody) { [weak self] (response: LoginResponse) in
+        network.request(endPoint: .Login(LoginRequest.init(userName: userName!, password: password!))) { [weak self] (response: LoginResponse) in
             if response.code == 0 {
-                if let accessToken = response.data?.accessToken {
-                    UserDefaults.setAccessToken(token: accessToken)
+                if let token = response.data?.accessToken {
+                    UserDefaults.setAccessToken(token: token)
                     self?.delegate.onLoginSuccess()
                 }
                 else {
@@ -66,9 +63,18 @@ class LoginVM {
                 self?.delegate.onError(error: response.message ?? "Something went wrong")
             }
         } onFailed: { [weak self] error in
-            self?.delegate.onError(error: error)
+            switch error {
+            case .UNEXPECTED_STATUS_CODE(let code):
+                if code == 404 {
+                    self?.delegate.onNewUser()
+                }
+                else {
+                    self?.delegate.onError(error: "Something went wrong")
+                }
+            default:
+                self?.delegate.onError(error: "Something went wrong")
+            }
         }
-
     }
     
     private func validate() {

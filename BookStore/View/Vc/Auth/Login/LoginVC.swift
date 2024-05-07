@@ -109,6 +109,13 @@ extension LoginVC: LoginViewDelegate {
         }
     }
     
+    func onNewUser() {
+        DispatchQueue.main.async { [weak self] in
+            let  vc = RegisterVC.instantiate()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     private func showError(error message: String) {
         let alertController = UIAlertController.init(title: "Error",
                                                      message: message,
