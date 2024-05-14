@@ -49,6 +49,7 @@
 		06C7FAF62BD39DCC0004CDD5 /* DynamicHeightCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAF52BD39DCC0004CDD5 /* DynamicHeightCV.swift */; };
 		06C7FAF92BD3AA9F0004CDD5 /* GridItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C7FAF82BD3AA9F0004CDD5 /* GridItemCell.xib */; };
 		06C7FAFA2BD3AA9F0004CDD5 /* GridItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAF72BD3AA9F0004CDD5 /* GridItemCell.swift */; };
+		71CF6BE748D7CC6564D333DF /* Pods_BookStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,9 @@
 		06C7FAF52BD39DCC0004CDD5 /* DynamicHeightCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCV.swift; sourceTree = "<group>"; };
 		06C7FAF72BD3AA9F0004CDD5 /* GridItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemCell.swift; sourceTree = "<group>"; };
 		06C7FAF82BD3AA9F0004CDD5 /* GridItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridItemCell.xib; sourceTree = "<group>"; };
+		6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.debug.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.debug.xcconfig"; sourceTree = "<group>"; };
+		C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.release.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CF6BE748D7CC6564D333DF /* Pods_BookStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +220,8 @@
 			children = (
 				06C7FAAE2BD2DAD90004CDD5 /* BookStore */,
 				06C7FAAD2BD2DAD90004CDD5 /* Products */,
+				2FB1A13FCBA82D795D49D96D /* Pods */,
+				7AC06B5783B65227BE71B0FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -391,6 +398,24 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		2FB1A13FCBA82D795D49D96D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */,
+				E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7AC06B5783B65227BE71B0FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,6 +423,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06C7FAC02BD2DADD0004CDD5 /* Build configuration list for PBXNativeTarget "BookStore" */;
 			buildPhases = (
+				F1A507A501925B3442378F12 /* [CP] Check Pods Manifest.lock */,
 				06C7FAA82BD2DAD90004CDD5 /* Sources */,
 				06C7FAA92BD2DAD90004CDD5 /* Frameworks */,
 				06C7FAAA2BD2DAD90004CDD5 /* Resources */,
@@ -465,6 +491,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F1A507A501925B3442378F12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06C7FAA82BD2DAD90004CDD5 /* Sources */ = {
@@ -647,6 +698,7 @@
 		};
 		06C7FAC12BD2DADD0004CDD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -682,6 +734,7 @@
 		};
 		06C7FAC22BD2DADD0004CDD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
