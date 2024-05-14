@@ -21,9 +21,9 @@
 		50A6A1E752117BBA31B86BE7C6C99FE1 /* Pods-BookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BookStore.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		88FC64703799ADA8CC4149942F91977A /* Pods-BookStore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BookStore-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A03F7DEB1DA81A5FFCA8E2EFE8B70C46 /* Pods-BookStore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BookStore-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods-BookStore */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BookStore"; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 		936E9D94F40340E23D59234E6C990F58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods-BookStore */,
+				B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods_BookStore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			);
 			name = "Pods-BookStore";
 			productName = Pods_BookStore;
-			productReference = B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods-BookStore */;
+			productReference = B93DE3B0FEA44755FB4C59240F8AD1D2 /* Pods_BookStore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

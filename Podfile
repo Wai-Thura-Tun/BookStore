@@ -6,5 +6,5 @@ target 'BookStore' do
   use_frameworks!
 
   # Pods for BookStore
-
+  pod 'SDWebImage', '~> 5.0'
 end
