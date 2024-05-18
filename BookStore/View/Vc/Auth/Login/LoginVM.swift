@@ -22,7 +22,7 @@ class LoginVM {
     }
     
     private let delegate: LoginViewDelegate
-    private let network: NetworkManager = .shared
+    private let repository: AuthRepository = .init()
     
     private var userName: String? {
         didSet {
@@ -49,30 +49,16 @@ class LoginVM {
     }
     
     func login() {
-        network.request(endPoint: .Login(LoginRequest.init(userName: userName!, password: password!))) { [weak self] (response: LoginResponse) in
-            if response.code == 0 {
-                if let token = response.data?.accessToken {
-                    UserDefaults.setAccessToken(token: token)
-                    self?.delegate.onLoginSuccess()
-                }
-                else {
-                    self?.delegate.onError(error: "Something went wrong")
-                }
-            }
-            else {
-                self?.delegate.onError(error: response.message ?? "Something went wrong")
-            }
+        repository.login(username: userName!, password: password!) { [weak self] in
+            self?.delegate.onLoginSuccess()
         } onFailed: { [weak self] error in
             switch error {
-            case .UNEXPECTED_STATUS_CODE(let code):
-                if code == 404 {
-                    self?.delegate.onNewUser()
-                }
-                else {
-                    self?.delegate.onError(error: "Something went wrong")
-                }
+            case .NEW_USER:
+                self?.delegate.onNewUser()
+            case .UNKOWN(let error):
+                self?.delegate.onError(error: error)
             default:
-                self?.delegate.onError(error: "Something went wrong")
+                break
             }
         }
     }

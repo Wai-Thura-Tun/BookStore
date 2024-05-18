@@ -51,6 +51,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cvCarousel" destination="D3F-FF-miY" id="08S-gL-k6v"/>
+                <outlet property="lblTitle" destination="vx8-Wi-A8t" id="T9q-1k-bgE"/>
             </connections>
             <point key="canvasLocation" x="138.1679389312977" y="130.63380281690141"/>
         </tableViewCell>

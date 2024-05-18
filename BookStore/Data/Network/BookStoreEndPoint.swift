@@ -10,8 +10,8 @@ import Foundation
 enum BookStoreEndPoint: EndPoint {
     
     case Login(Encodable)
-    
     case Register(Encodable)
+    case GetBooks
     
     var path: String {
         switch self {
@@ -19,6 +19,8 @@ enum BookStoreEndPoint: EndPoint {
             return "/auth/login"
         case .Register:
             return "/auth/register_user"
+        case .GetBooks:
+            return "/user/books"
         }
     }
     
@@ -26,12 +28,14 @@ enum BookStoreEndPoint: EndPoint {
         switch self {
         case .Login, .Register:
             return .POST
+        case .GetBooks:
+            return .GET
         }
     }
     
     var header: [String : Any]? {
         switch self {
-        case .Login, .Register:
+        case .Login, .Register, .GetBooks:
             return nil
         }
     }
@@ -40,6 +44,8 @@ enum BookStoreEndPoint: EndPoint {
         switch self {
         case let .Login(request), let .Register(request):
             return request.toDict()
+        case .GetBooks:
+            return nil
         }
     }
     
@@ -47,9 +53,10 @@ enum BookStoreEndPoint: EndPoint {
         switch self {
         case .Login, .Register:
             return .JSON
+        case .GetBooks:
+            return .QUERY_STRING
         }
     }
-    
 }
 
 extension Encodable {

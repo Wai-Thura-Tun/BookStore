@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061663D82BF3DB8B001E6A09 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061663D72BF3DB8B001E6A09 /* AuthRepository.swift */; };
 		061C68442BDE08EE00F0C7C3 /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C68432BDE08EE00F0C7C3 /* StoryBoarded.swift */; };
 		061C68482BDE099900F0C7C3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C68472BDE099900F0C7C3 /* LoginVC.swift */; };
 		061C684C2BDE09B300F0C7C3 /* RootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C684B2BDE09B300F0C7C3 /* RootNC.swift */; };
@@ -15,13 +16,13 @@
 		061C68532BDE0C0900F0C7C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061C68522BDE0C0900F0C7C3 /* Main.storyboard */; };
 		061C68562BDE141700F0C7C3 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C68552BDE141700F0C7C3 /* UITextField.swift */; };
 		061C68592BDE194D00F0C7C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C68582BDE194D00F0C7C3 /* NetworkManager.swift */; };
-		065952AD2BE35AD800363518 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952AC2BE35AD800363518 /* RegisterVC.swift */; };
+		063A6A2E2BF3B8A900643458 /* AuthRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A6A2D2BF3B8A900643458 /* AuthRemoteDataSource.swift */; };
+		065952AD2BE35AD800363518 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952AC2BE35AD800363518 /* SignUpVC.swift */; };
 		065952B12BE35F9B00363518 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B02BE35F9B00363518 /* LoginResponse.swift */; };
-		065952B32BE35FA600363518 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B22BE35FA600363518 /* RegisterResponse.swift */; };
 		065952B52BE35FBD00363518 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B42BE35FBD00363518 /* LoginRequest.swift */; };
 		065952B72BE35FC700363518 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B62BE35FC700363518 /* RegisterRequest.swift */; };
 		065952B92BE3634700363518 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B82BE3634700363518 /* LoginVM.swift */; };
-		065952BB2BE3635100363518 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952BA2BE3635100363518 /* RegisterVM.swift */; };
+		065952BB2BE3635100363518 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952BA2BE3635100363518 /* SignUpVM.swift */; };
 		065952C72BE88C4600363518 /* BookStoreEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C62BE88C4600363518 /* BookStoreEndPoint.swift */; };
 		065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C82BE88C5500363518 /* HTTPMethod.swift */; };
 		065952CB2BE88C6200363518 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CA2BE88C6200363518 /* EndPoint.swift */; };
@@ -49,10 +50,15 @@
 		06C7FAF62BD39DCC0004CDD5 /* DynamicHeightCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAF52BD39DCC0004CDD5 /* DynamicHeightCV.swift */; };
 		06C7FAF92BD3AA9F0004CDD5 /* GridItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C7FAF82BD3AA9F0004CDD5 /* GridItemCell.xib */; };
 		06C7FAFA2BD3AA9F0004CDD5 /* GridItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAF72BD3AA9F0004CDD5 /* GridItemCell.swift */; };
+		06CCD36F2BF6568D00827F1F /* BookListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CCD36E2BF6568D00827F1F /* BookListVM.swift */; };
+		06CEAB972BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB962BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift */; };
+		06CEAB992BF5030500A3CFC8 /* BookListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB982BF5030500A3CFC8 /* BookListResponse.swift */; };
+		06CEAB9B2BF5A28000A3CFC8 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB9A2BF5A28000A3CFC8 /* BookRepository.swift */; };
 		71CF6BE748D7CC6564D333DF /* Pods_BookStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061663D72BF3DB8B001E6A09 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		061C68432BDE08EE00F0C7C3 /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		061C68472BDE099900F0C7C3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		061C684B2BDE09B300F0C7C3 /* RootNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNC.swift; sourceTree = "<group>"; };
@@ -61,13 +67,13 @@
 		061C68522BDE0C0900F0C7C3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		061C68552BDE141700F0C7C3 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		061C68582BDE194D00F0C7C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		065952AC2BE35AD800363518 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		063A6A2D2BF3B8A900643458 /* AuthRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteDataSource.swift; sourceTree = "<group>"; };
+		065952AC2BE35AD800363518 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		065952B02BE35F9B00363518 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		065952B22BE35FA600363518 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		065952B42BE35FBD00363518 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		065952B62BE35FC700363518 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		065952B82BE3634700363518 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
-		065952BA2BE3635100363518 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		065952BA2BE3635100363518 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		065952C62BE88C4600363518 /* BookStoreEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreEndPoint.swift; sourceTree = "<group>"; };
 		065952C82BE88C5500363518 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		065952CA2BE88C6200363518 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -97,6 +103,10 @@
 		06C7FAF52BD39DCC0004CDD5 /* DynamicHeightCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCV.swift; sourceTree = "<group>"; };
 		06C7FAF72BD3AA9F0004CDD5 /* GridItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemCell.swift; sourceTree = "<group>"; };
 		06C7FAF82BD3AA9F0004CDD5 /* GridItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridItemCell.xib; sourceTree = "<group>"; };
+		06CCD36E2BF6568D00827F1F /* BookListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVM.swift; sourceTree = "<group>"; };
+		06CEAB962BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRemoteDataSource.swift; sourceTree = "<group>"; };
+		06CEAB982BF5030500A3CFC8 /* BookListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListResponse.swift; sourceTree = "<group>"; };
+		06CEAB9A2BF5A28000A3CFC8 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.debug.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.release.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +135,7 @@
 		061C68452BDE098000F0C7C3 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				065952A92BE35AB900363518 /* Register */,
+				065952A92BE35AB900363518 /* SignUp */,
 				065952A82BE35AB400363518 /* Login */,
 			);
 			path = Auth;
@@ -135,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				06C7FACD2BD2E0F70004CDD5 /* BookListVC.swift */,
+				06CCD36E2BF6568D00827F1F /* BookListVM.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -179,6 +190,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		063A6A2C2BF3B89700643458 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				063A6A2D2BF3B8A900643458 /* AuthRemoteDataSource.swift */,
+				06CEAB962BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		065952A82BE35AB400363518 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,13 +208,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		065952A92BE35AB900363518 /* Register */ = {
+		065952A92BE35AB900363518 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				065952AC2BE35AD800363518 /* RegisterVC.swift */,
-				065952BA2BE3635100363518 /* RegisterVM.swift */,
+				065952AC2BE35AD800363518 /* SignUpVC.swift */,
+				065952BA2BE3635100363518 /* SignUpVM.swift */,
 			);
-			path = Register;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		065952AE2BE35F5600363518 /* Request */ = {
@@ -210,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				065952B02BE35F9B00363518 /* LoginResponse.swift */,
-				065952B22BE35FA600363518 /* RegisterResponse.swift */,
+				06CEAB982BF5030500A3CFC8 /* BookListResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -297,6 +317,7 @@
 		06C7FAC72BD2DB4F0004CDD5 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				063A6A2C2BF3B89700643458 /* Remote */,
 				06C7FAC82BD2DB550004CDD5 /* Local */,
 			);
 			path = DataSource;
@@ -323,6 +344,8 @@
 		06C7FACA2BD2DB600004CDD5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				061663D72BF3DB8B001E6A09 /* AuthRepository.swift */,
+				06CEAB9A2BF5A28000A3CFC8 /* BookRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -404,7 +427,6 @@
 				6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */,
 				E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -541,10 +563,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				061C68592BDE194D00F0C7C3 /* NetworkManager.swift in Sources */,
+				061663D82BF3DB8B001E6A09 /* AuthRepository.swift in Sources */,
 				06C7FACC2BD2DB760004CDD5 /* Book.swift in Sources */,
 				06C7FAE42BD3933B0004CDD5 /* BannerCell.swift in Sources */,
 				065952C72BE88C4600363518 /* BookStoreEndPoint.swift in Sources */,
-				065952BB2BE3635100363518 /* RegisterVM.swift in Sources */,
+				063A6A2E2BF3B8A900643458 /* AuthRemoteDataSource.swift in Sources */,
+				065952BB2BE3635100363518 /* SignUpVM.swift in Sources */,
+				06CCD36F2BF6568D00827F1F /* BookListVM.swift in Sources */,
+				06CEAB972BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift in Sources */,
 				061C68482BDE099900F0C7C3 /* LoginVC.swift in Sources */,
 				061C68562BDE141700F0C7C3 /* UITextField.swift in Sources */,
 				06C7FAB02BD2DAD90004CDD5 /* AppDelegate.swift in Sources */,
@@ -553,8 +579,10 @@
 				06C7FACE2BD2E0F70004CDD5 /* BookListVC.swift in Sources */,
 				065952CD2BE88D2E00363518 /* HTTPEncoding.swift in Sources */,
 				06C7FADA2BD3833B0004CDD5 /* CarouselCell.swift in Sources */,
+				06CEAB9B2BF5A28000A3CFC8 /* BookRepository.swift in Sources */,
 				06C7FADF2BD383B40004CDD5 /* CarouselItemCell.swift in Sources */,
-				065952AD2BE35AD800363518 /* RegisterVC.swift in Sources */,
+				06CEAB992BF5030500A3CFC8 /* BookListResponse.swift in Sources */,
+				065952AD2BE35AD800363518 /* SignUpVC.swift in Sources */,
 				065952B72BE35FC700363518 /* RegisterRequest.swift in Sources */,
 				06C7FAFA2BD3AA9F0004CDD5 /* GridItemCell.swift in Sources */,
 				061C68442BDE08EE00F0C7C3 /* StoryBoarded.swift in Sources */,
@@ -563,7 +591,6 @@
 				06C7FAB22BD2DAD90004CDD5 /* SceneDelegate.swift in Sources */,
 				06C7FAE92BD396A50004CDD5 /* BannerItemCell.swift in Sources */,
 				06C7FAEE2BD39CE30004CDD5 /* GridCell.swift in Sources */,
-				065952B32BE35FA600363518 /* RegisterResponse.swift in Sources */,
 				065952B92BE3634700363518 /* LoginVM.swift in Sources */,
 				065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */,
 				06C7FAF62BD39DCC0004CDD5 /* DynamicHeightCV.swift in Sources */,
@@ -724,6 +751,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBSLHJAF4T;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -760,6 +788,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TBSLHJAF4T;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

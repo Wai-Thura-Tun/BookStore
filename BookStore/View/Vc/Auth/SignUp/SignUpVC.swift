@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController, StoryBoarded {
+class SignUpVC: UIViewController, StoryBoarded {
 
     @IBOutlet weak var tfUserName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -18,11 +18,11 @@ class RegisterVC: UIViewController, StoryBoarded {
     @IBOutlet weak var lblPhoneNoError: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var btnSignUp: UIButton!
     
     static var storyboardName: String = "Auth"
     
-    private lazy var vm: RegisterVM = .init(delegate: self)
+    private lazy var vm: SignUpVM = .init(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class RegisterVC: UIViewController, StoryBoarded {
         tfPassword.addTarget(self, action: #selector(onChangePassword), for: .editingChanged)
         
         // Click event for
-        btnRegister.addTarget(self, action: #selector(onTapRegister), for: .touchUpInside)
+        btnSignUp.addTarget(self, action: #selector(onTapSignUp), for: .touchUpInside)
         btnLogin.addTarget(self, action: #selector(onTapLogin), for: .touchUpInside)
     }
     
@@ -90,8 +90,8 @@ class RegisterVC: UIViewController, StoryBoarded {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func onTapRegister() {
-        vm.register()
+    @objc func onTapSignUp() {
+        vm.signUp()
     }
     
     private func resetError() {
@@ -107,14 +107,14 @@ class RegisterVC: UIViewController, StoryBoarded {
     }
 }
 
-extension RegisterVC: RegisterViewDelegate {
-    func onValidate(validationErrors: [RegisterVM.FormInput]) {
+extension SignUpVC: SignUpViewDelegate {
+    func onValidate(validationErrors: [SignUpVM.FormInput]) {
         if validationErrors.isEmpty {
-            btnRegister.isEnabled = true
+            btnSignUp.isEnabled = true
             resetError()
         }
         else {
-            btnRegister.isEnabled = false
+            btnSignUp.isEnabled = false
             resetError()
             validationErrors.forEach { inputType in
                 switch inputType {
@@ -137,7 +137,7 @@ extension RegisterVC: RegisterViewDelegate {
         }
     }
     
-    func onRegisterLogin() {
+    func onSignUpSuccess() {
         DispatchQueue.main.async { [weak self] in
             let vc = BookListVC.instantiate()
             self?.navigationController?.setViewControllers([vc], animated: true)

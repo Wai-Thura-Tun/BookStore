@@ -48,6 +48,9 @@
                 <constraint firstItem="EPD-iA-HPH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qjn-rX-Loi"/>
             </constraints>
             <size key="customSize" width="180" height="261"/>
+            <connections>
+                <outlet property="imgBookCover" destination="nRs-JQ-NZR" id="ZdX-o9-DBi"/>
+            </connections>
             <point key="canvasLocation" x="155.72519083969465" y="94.718309859154928"/>
         </collectionViewCell>
     </objects>

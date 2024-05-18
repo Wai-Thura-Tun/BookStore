@@ -20,7 +20,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ll-UZ-Imc">
                         <rect key="frame" x="20" y="0.0" width="440" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -51,6 +51,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cvBanner" destination="nnX-HP-dyX" id="AZC-GL-UFV"/>
+                <outlet property="lblTitle" destination="4ll-UZ-Imc" id="PPc-vW-taD"/>
             </connections>
             <point key="canvasLocation" x="148.09160305343511" y="84.859154929577471"/>
         </tableViewCell>

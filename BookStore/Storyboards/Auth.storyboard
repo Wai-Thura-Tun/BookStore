@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="58" y="-2"/>
         </scene>
-        <!--RegisterVC-->
+        <!--Sign UpVC-->
         <scene sceneID="2Ip-ye-efl">
             <objects>
-                <viewController storyboardIdentifier="RegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gyY-U3-gUh" customClass="RegisterVC" customModule="BookStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gyY-U3-gUh" customClass="SignUpVC" customModule="BookStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTg-c8-ze4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +225,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1a-jM-0Kj">
                                         <rect key="frame" x="0.0" y="300" width="353" height="42.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-6a-m0F">
                                         <rect key="frame" x="0.0" y="372.33333333333337" width="353" height="50"/>
@@ -276,8 +276,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnLogin" destination="YSg-Ns-ICh" id="NAE-Pf-u17"/>
-                        <outlet property="btnRegister" destination="L1a-jM-0Kj" id="1gJ-pa-mDn"/>
+                        <outlet property="btnLogin" destination="YSg-Ns-ICh" id="5Ki-nL-i50"/>
+                        <outlet property="btnSignUp" destination="L1a-jM-0Kj" id="ecj-aY-iRk"/>
                         <outlet property="lblEmailError" destination="xNh-6L-QiQ" id="g58-a9-9eG"/>
                         <outlet property="lblPassword" destination="iac-cK-uOo" id="jOI-ag-LX5"/>
                         <outlet property="lblPhoneNoError" destination="644-85-FaN" id="nfx-lD-jNy"/>

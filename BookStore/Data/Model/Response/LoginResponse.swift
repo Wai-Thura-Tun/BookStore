@@ -24,3 +24,5 @@ struct LoginVO: Codable {
         case accessToken = "access_token"
     }
 }
+
+typealias RegisterResponse = LoginResponse
