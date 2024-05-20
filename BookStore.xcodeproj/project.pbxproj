@@ -24,9 +24,7 @@
 		065952B92BE3634700363518 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952B82BE3634700363518 /* LoginVM.swift */; };
 		065952BB2BE3635100363518 /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952BA2BE3635100363518 /* SignUpVM.swift */; };
 		065952C72BE88C4600363518 /* BookStoreEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C62BE88C4600363518 /* BookStoreEndPoint.swift */; };
-		065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952C82BE88C5500363518 /* HTTPMethod.swift */; };
 		065952CB2BE88C6200363518 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CA2BE88C6200363518 /* EndPoint.swift */; };
-		065952CD2BE88D2E00363518 /* HTTPEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CC2BE88D2E00363518 /* HTTPEncoding.swift */; };
 		065952CF2BE8B16700363518 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065952CE2BE8B16700363518 /* NetworkError.swift */; };
 		06C7FAB02BD2DAD90004CDD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAAF2BD2DAD90004CDD5 /* AppDelegate.swift */; };
 		06C7FAB22BD2DAD90004CDD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C7FAB12BD2DAD90004CDD5 /* SceneDelegate.swift */; };
@@ -54,6 +52,10 @@
 		06CEAB972BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB962BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift */; };
 		06CEAB992BF5030500A3CFC8 /* BookListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB982BF5030500A3CFC8 /* BookListResponse.swift */; };
 		06CEAB9B2BF5A28000A3CFC8 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEAB9A2BF5A28000A3CFC8 /* BookRepository.swift */; };
+		06DCF0652BFAE23A00D17D51 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCF0642BFAE23A00D17D51 /* UIImageView.swift */; };
+		06DCF0672BFAFBB100D17D51 /* BookStoreRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCF0662BFAFBB100D17D51 /* BookStoreRequestInterceptor.swift */; };
+		06DCF0692BFAFD2600D17D51 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCF0682BFAFD2600D17D51 /* KeychainManager.swift */; };
+		06DCF06B2BFB02AE00D17D51 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCF06A2BFB02AE00D17D51 /* NSNotification.swift */; };
 		71CF6BE748D7CC6564D333DF /* Pods_BookStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,9 +77,7 @@
 		065952B82BE3634700363518 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		065952BA2BE3635100363518 /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		065952C62BE88C4600363518 /* BookStoreEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreEndPoint.swift; sourceTree = "<group>"; };
-		065952C82BE88C5500363518 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		065952CA2BE88C6200363518 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		065952CC2BE88D2E00363518 /* HTTPEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEncoding.swift; sourceTree = "<group>"; };
 		065952CE2BE8B16700363518 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		06C7FAAC2BD2DAD90004CDD5 /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C7FAAF2BD2DAD90004CDD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +107,10 @@
 		06CEAB962BF4FDFC00A3CFC8 /* BookRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRemoteDataSource.swift; sourceTree = "<group>"; };
 		06CEAB982BF5030500A3CFC8 /* BookListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListResponse.swift; sourceTree = "<group>"; };
 		06CEAB9A2BF5A28000A3CFC8 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		06DCF0642BFAE23A00D17D51 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		06DCF0662BFAFBB100D17D51 /* BookStoreRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreRequestInterceptor.swift; sourceTree = "<group>"; };
+		06DCF0682BFAFD2600D17D51 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		06DCF06A2BFB02AE00D17D51 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		6F1590BB24796339D1D46935 /* Pods-BookStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.debug.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C4862CFD778481906E5F8C0C /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E686A7B43EDBE90352DD95C6 /* Pods-BookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.release.xcconfig"; path = "Target Support Files/Pods-BookStore/Pods-BookStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				061C68552BDE141700F0C7C3 /* UITextField.swift */,
+				06DCF0642BFAE23A00D17D51 /* UIImageView.swift */,
+				06DCF06A2BFB02AE00D17D51 /* NSNotification.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,9 +189,8 @@
 				061C68582BDE194D00F0C7C3 /* NetworkManager.swift */,
 				065952CE2BE8B16700363518 /* NetworkError.swift */,
 				065952CA2BE88C6200363518 /* EndPoint.swift */,
-				065952CC2BE88D2E00363518 /* HTTPEncoding.swift */,
-				065952C82BE88C5500363518 /* HTTPMethod.swift */,
 				065952C62BE88C4600363518 /* BookStoreEndPoint.swift */,
+				06DCF0662BFAFBB100D17D51 /* BookStoreRequestInterceptor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				061C684D2BDE0A4C00F0C7C3 /* UserDefultsManager.swift */,
+				06DCF0682BFAFD2600D17D51 /* KeychainManager.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -577,9 +583,9 @@
 				061C684E2BDE0A4C00F0C7C3 /* UserDefultsManager.swift in Sources */,
 				065952CF2BE8B16700363518 /* NetworkError.swift in Sources */,
 				06C7FACE2BD2E0F70004CDD5 /* BookListVC.swift in Sources */,
-				065952CD2BE88D2E00363518 /* HTTPEncoding.swift in Sources */,
 				06C7FADA2BD3833B0004CDD5 /* CarouselCell.swift in Sources */,
 				06CEAB9B2BF5A28000A3CFC8 /* BookRepository.swift in Sources */,
+				06DCF06B2BFB02AE00D17D51 /* NSNotification.swift in Sources */,
 				06C7FADF2BD383B40004CDD5 /* CarouselItemCell.swift in Sources */,
 				06CEAB992BF5030500A3CFC8 /* BookListResponse.swift in Sources */,
 				065952AD2BE35AD800363518 /* SignUpVC.swift in Sources */,
@@ -590,9 +596,11 @@
 				065952B12BE35F9B00363518 /* LoginResponse.swift in Sources */,
 				06C7FAB22BD2DAD90004CDD5 /* SceneDelegate.swift in Sources */,
 				06C7FAE92BD396A50004CDD5 /* BannerItemCell.swift in Sources */,
+				06DCF0652BFAE23A00D17D51 /* UIImageView.swift in Sources */,
 				06C7FAEE2BD39CE30004CDD5 /* GridCell.swift in Sources */,
 				065952B92BE3634700363518 /* LoginVM.swift in Sources */,
-				065952C92BE88C5500363518 /* HTTPMethod.swift in Sources */,
+				06DCF0672BFAFBB100D17D51 /* BookStoreRequestInterceptor.swift in Sources */,
+				06DCF0692BFAFD2600D17D51 /* KeychainManager.swift in Sources */,
 				06C7FAF62BD39DCC0004CDD5 /* DynamicHeightCV.swift in Sources */,
 				061C684C2BDE09B300F0C7C3 /* RootNC.swift in Sources */,
 				065952CB2BE88C6200363518 /* EndPoint.swift in Sources */,

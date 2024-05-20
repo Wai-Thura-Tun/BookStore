@@ -8,13 +8,13 @@
 import Foundation
 
 extension UserDefaults {
-    static let ACCESS_TOKEN_KEY: String = "ACCESS_TOKEN"
+    static let OLD_USER: String = "OldUser"
     
-    static func setAccessToken(token: String) {
-        standard.setValue(token, forKey: ACCESS_TOKEN_KEY)
+    static func setOldUser() {
+        standard.set(true, forKey: OLD_USER)
     }
     
-    static func getAccessToken() -> String? {
-        return standard.string(forKey: ACCESS_TOKEN_KEY)
+    static func IsOldUser() -> Bool {
+        return standard.bool(forKey: OLD_USER)
     }
 }

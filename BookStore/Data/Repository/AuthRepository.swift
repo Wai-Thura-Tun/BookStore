@@ -19,7 +19,8 @@ class AuthRepository {
             username: username,
             password: password,
             onSuccess: { token in
-                UserDefaults.setAccessToken(token: token)
+                KeychainManager.shared.setAccessToken(with: token)
+                UserDefaults.setOldUser()
                 onSuccess()
             },
             onFailed: onFailed
@@ -39,7 +40,8 @@ class AuthRepository {
             phone: phone,
             password: password,
             onSuccess: { token in
-                UserDefaults.setAccessToken(token: token)
+                KeychainManager.shared.setAccessToken(with: token)
+                UserDefaults.setOldUser()
             },
             onFailed: onFailed)
     }

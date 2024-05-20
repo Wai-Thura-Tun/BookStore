@@ -48,7 +48,7 @@ extension BannerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerItemCell", for: indexPath) as? BannerItemCell
         guard let cell = cell else { return UICollectionViewCell.init() }
-        cell.data = data?.books[indexPath.row]
+        cell.data = data?.books[indexPath.row].bookCover
         return cell
     }
 }
