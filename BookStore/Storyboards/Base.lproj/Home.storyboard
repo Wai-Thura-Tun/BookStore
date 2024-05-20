@@ -107,6 +107,7 @@
                     <connections>
                         <outlet property="imgUser" destination="WcV-qK-Quv" id="4Co-vX-3kc"/>
                         <outlet property="tbBookList" destination="ick-FR-zNQ" id="I6P-bV-xuy"/>
+                        <outlet property="tfBookSearch" destination="AMY-Vg-3zh" id="D1l-5y-73y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

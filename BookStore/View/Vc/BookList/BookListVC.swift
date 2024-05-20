@@ -19,6 +19,7 @@ class BookListVC: UIViewController, StoryBoarded {
     
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var tbBookList: UITableView!
+    @IBOutlet weak var tfBookSearch: UITextField!
     
     private lazy var vm: BookListVM = .init(delegate: self)
     
@@ -42,7 +43,11 @@ class BookListVC: UIViewController, StoryBoarded {
     }
     
     private func setUpBindings() {
-        
+        tfBookSearch.addCancelBarButton(target: self, action: #selector(onTapBookSearch))
+    }
+    
+    @objc func onTapBookSearch() {
+        tfBookSearch.resignFirstResponder()
     }
 }
 
