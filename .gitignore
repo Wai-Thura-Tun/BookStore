@@ -1,0 +1,22 @@
+# Xcode
+DerivedData/
+*.xcuserdata
+*.xcuserstate
+
+# Swift Package Manager
+/.build/
+swiftpm/xcode/outputs/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Temporary files
+*.tmp
+*.swp
+*.swm
+
+# User-specific files
+*.orig
+*.DS_Store
+*.env
