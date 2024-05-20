@@ -6,53 +6,40 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkManager {
     
+    private let session: Session
     static let shared: NetworkManager = .init()
+    private let tokenExpiredErrorCode: Int = 401
     
-    private init() {}
+    private init() {
+        session = Session(interceptor: BookStoreRequestInterceptor())
+    }
     
     func request<T: Codable>(
         endPoint: BookStoreEndPoint,
         onSuccess: @escaping (T) -> Void,
         onFailed: @escaping (NetworkError) -> Void
     ) {
-        let url = try? endPoint.asURL()
-        
-        guard let url = url else {
-            onFailed(.INVALID_URL)
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = endPoint.method.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        if let token = UserDefaults.getAccessToken(), !token.isEmpty {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        if let requestBody = endPoint.parameter {
-            switch endPoint.encoding {
-            case .JSON:
-                let data = try? JSONSerialization.data(withJSONObject: requestBody)
-                request.httpBody = data
-            case .QUERY_STRING:
-                request.url?.append(queryItems: requestBody.map {
-                    URLQueryItem(name: $0.key, value: $0.value as? String)
-                })
-            }
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let _ = error {
-                onFailed(.UNKNOWN)
-            }
-            else {
-                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+        session.request(endPoint, 
+                        method: endPoint.method,
+                        parameters: endPoint.parameter,
+                        encoding: endPoint.encoding,
+                        headers: endPoint.header)
+            .validate({ [weak self] request, response, data in
+                if response.statusCode == self?.tokenExpiredErrorCode {
+                    return .failure(NetworkError.UNEXPECTED_STATUS_CODE(response.statusCode))
+                }
+                else {
+                    return .success(())
+                }
+            })
+            .response { afReponse in
+                if let statusCode = afReponse.response?.statusCode {
                     if (200..<300) ~= statusCode {
-                        if let data = data {
+                        if let data = afReponse.data {
                             let object = try? JSONDecoder().decode(T.self, from: data)
                             if let object = object {
                                 onSuccess(object)
@@ -72,7 +59,6 @@ class NetworkManager {
                 else {
                     onFailed(.EMPTY_RESPONSE)
                 }
-            }
-        }.resume()
+        }
     }
 }

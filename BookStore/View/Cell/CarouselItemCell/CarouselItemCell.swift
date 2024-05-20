@@ -16,7 +16,7 @@ class CarouselItemCell: UICollectionViewCell {
     var data: BookVO? = nil {
         didSet {
             if let data = data {
-                imgBookCover.sd_setImage(with: URL(string: data.bookCover ?? ""))
+                imgBookCover.setImage(url: data.bookCover, isAddLoading: true)
                 lblBookTitle.text = data.name
                 lblBookAuthor.text = data.author?.name
             }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum BookStoreEndPoint: EndPoint {
     
@@ -24,23 +25,23 @@ enum BookStoreEndPoint: EndPoint {
         }
     }
     
-    var method: HTTPMethod {
+    var method: Alamofire.HTTPMethod {
         switch self {
         case .Login, .Register:
-            return .POST
+            return .post
         case .GetBooks:
-            return .GET
+            return .get
         }
     }
     
-    var header: [String : Any]? {
+    var header: HTTPHeaders? {
         switch self {
         case .Login, .Register, .GetBooks:
             return nil
         }
     }
     
-    var parameter: [String : Any]? {
+    var parameter: Parameters? {
         switch self {
         case let .Login(request), let .Register(request):
             return request.toDict()
@@ -49,12 +50,12 @@ enum BookStoreEndPoint: EndPoint {
         }
     }
     
-    var encoding: HTTPEncoding {
+    var encoding: ParameterEncoding {
         switch self {
         case .Login, .Register:
-            return .JSON
+            return JSONEncoding.default
         case .GetBooks:
-            return .QUERY_STRING
+            return URLEncoding.default
         }
     }
 }

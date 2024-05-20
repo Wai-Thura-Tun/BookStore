@@ -15,8 +15,21 @@ class RootNC: UINavigationController {
         checkUserLoginStatus()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTokenExpired), name: .TokenExpiredNotification, object: nil)
+    }
+    
+    @objc func handleTokenExpired() {
+        KeychainManager.shared.deleteAccessToken()
+        DispatchQueue.main.async { [weak self] in
+            self?.checkUserLoginStatus()
+        }
+    }
+    
     private func checkUserLoginStatus() {
-        if UserDefaults.getAccessToken() != nil {
+        if KeychainManager.shared.getAccessToken() != nil {
             let vc = BookListVC.instantiate()
             pushViewController(vc, animated: true)
         }

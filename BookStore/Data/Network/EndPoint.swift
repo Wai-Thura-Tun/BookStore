@@ -6,16 +6,15 @@
 //
 
 import Foundation
+import Alamofire
 
-protocol EndPoint {
+protocol EndPoint: URLConvertible {
     var baseURL: URL { get }
     var path: String { get }
-    var method: HTTPMethod { get }
-    var header: [String : Any]? { get }
-    var parameter: [String : Any]? { get }
-    var encoding: HTTPEncoding { get }
-    
-    func asURL() throws -> URL
+    var method: Alamofire.HTTPMethod { get }
+    var header: HTTPHeaders? { get }
+    var parameter: Parameters? { get }
+    var encoding: ParameterEncoding { get }
 }
 
 extension EndPoint {

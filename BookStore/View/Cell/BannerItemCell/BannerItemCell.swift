@@ -11,11 +11,9 @@ class BannerItemCell: UICollectionViewCell {
 
     @IBOutlet weak var imgBookCover: UIImageView!
     
-    var data: BookVO? = nil {
+    var data: String? = nil {
         didSet {
-            if let data = data {
-                imgBookCover.sd_setImage(with: URL(string: data.bookCover ?? ""))
-            }
+            imgBookCover.setImage(url: data, isAddLoading: true)
         }
     }
     

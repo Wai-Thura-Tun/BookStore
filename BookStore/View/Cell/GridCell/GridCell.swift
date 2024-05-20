@@ -46,7 +46,7 @@ extension GridCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridItemCell", for: indexPath) as? GridItemCell
         guard let cell = cell else { return UICollectionViewCell.init() }
-        cell.data = data?.books[indexPath.row]
+        cell.data = data?.books[indexPath.row].bookCover
         return cell
     }
 }

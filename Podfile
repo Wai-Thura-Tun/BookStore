@@ -6,5 +6,7 @@ target 'BookStore' do
   use_frameworks!
 
   # Pods for BookStore
-  pod 'SDWebImage', '~> 5.0'
+  pod 'Alamofire'
+  pod 'KeychainAccess'
+  pod 'Kingfisher', '~> 7.0'
 end
