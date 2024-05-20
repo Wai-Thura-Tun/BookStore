@@ -30,6 +30,3 @@ To set up the project, clone the repository and install the necessary dependenci
 git clone https://github.com/yourusername/bookstore-practice-app.git
 cd bookstore-practice-app
 pod install
-
-## Architecture
-The project follows the MVVM (Model-View-ViewModel) design pattern to ensure a clear separation of concerns and to enhance code maintainability.
