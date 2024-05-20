@@ -11,7 +11,6 @@ This project is a practice bookstore application developed using Swift, adhering
 5. [Third-Party Libraries](#third-party-libraries)
 6. [Usage](#usage)
 7. [Contributing](#contributing)
-8. [License](#license)
 
 ## Features
 - Browse a list of books with details.
