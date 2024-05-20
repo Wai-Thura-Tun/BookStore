@@ -9,14 +9,19 @@ import Foundation
 import UIKit
 
 class DynamicHeightCV: UICollectionView {
-    override func reloadData() {
-        super.reloadData()
-        self.layoutIfNeeded()
-        self.invalidateIntrinsicContentSize()
-    }
+    var maxHeight = CGFloat.greatestFiniteMagnitude
     
     override var intrinsicContentSize: CGSize {
-        self.layoutIfNeeded()
-        return super.contentSize
+        setNeedsLayout()
+        layoutIfNeeded()
+        
+        let height = min(contentSize.height, maxHeight)
+        return .init(width: UIScreen.main.bounds.width, height: height)
+    }
+    
+    override func reloadData() {
+        super.reloadData()
+        invalidateIntrinsicContentSize()
+        layoutIfNeeded()
     }
 }

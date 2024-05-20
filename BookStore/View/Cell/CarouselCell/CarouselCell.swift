@@ -10,6 +10,16 @@ import UIKit
 class CarouselCell: UITableViewCell {
 
     @IBOutlet weak var cvCarousel: UICollectionView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    var data: SpecialBookVO? = nil {
+        didSet {
+            if let data = data {
+                lblTitle.text = data.title
+                cvCarousel.reloadData()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,12 +40,13 @@ class CarouselCell: UITableViewCell {
 
 extension CarouselCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return data?.books.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselItemCell", for: indexPath) as? CarouselItemCell
         guard let cell = cell else { return UICollectionViewCell.init() }
+        cell.data = data?.books[indexPath.row]
         return cell
     }
 }

@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwY-88-wzG">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="308"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_1" translatesAutoresizingMaskIntoConstraints="NO" id="SnS-Mo-RZo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_1" translatesAutoresizingMaskIntoConstraints="NO" id="SnS-Mo-RZo">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="iKB-jS-vFC"/>
@@ -69,6 +69,11 @@
                 <constraint firstAttribute="trailing" secondItem="pwY-88-wzG" secondAttribute="trailing" id="pnz-GN-fec"/>
             </constraints>
             <size key="customSize" width="181" height="225"/>
+            <connections>
+                <outlet property="imgBookCover" destination="SnS-Mo-RZo" id="QCx-Dd-egD"/>
+                <outlet property="lblBookAuthor" destination="G9i-Vv-YBL" id="cbf-Ud-g9u"/>
+                <outlet property="lblBookTitle" destination="Gdw-ji-GY7" id="yaV-af-enb"/>
+            </connections>
             <point key="canvasLocation" x="110.68702290076335" y="81.338028169014095"/>
         </collectionViewCell>
     </objects>

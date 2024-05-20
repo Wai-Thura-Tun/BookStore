@@ -10,6 +10,16 @@ import UIKit
 class BannerCell: UITableViewCell {
     
     @IBOutlet weak var cvBanner: UICollectionView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    var data: SpecialBookVO? = nil {
+        didSet {
+            if let data = data {
+                lblTitle.text = data.title
+                cvBanner.reloadData()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,12 +42,13 @@ class BannerCell: UITableViewCell {
 
 extension BannerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return data?.books.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerItemCell", for: indexPath) as? BannerItemCell
         guard let cell = cell else { return UICollectionViewCell.init() }
+        cell.data = data?.books[indexPath.row]
         return cell
     }
 }

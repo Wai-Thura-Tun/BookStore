@@ -61,7 +61,7 @@ class LoginVC: UIViewController, StoryBoarded {
     }
     
     @objc func onTapRegister() {
-        let vc = RegisterVC.instantiate()
+        let vc = SignUpVC.instantiate()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -111,7 +111,7 @@ extension LoginVC: LoginViewDelegate {
     
     func onNewUser() {
         DispatchQueue.main.async { [weak self] in
-            let  vc = RegisterVC.instantiate()
+            let  vc = SignUpVC.instantiate()
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -75,6 +75,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgBookCover" destination="FCA-W9-glw" id="UZg-Qn-nDD"/>
+                <outlet property="lblBookAuthor" destination="XX0-RD-KIS" id="Kra-Lv-8xo"/>
+                <outlet property="lblBookTitle" destination="4LI-IN-0hq" id="mQc-8i-Nb2"/>
+            </connections>
             <point key="canvasLocation" x="56.488549618320612" y="205.63380281690141"/>
         </tableViewCell>
     </objects>

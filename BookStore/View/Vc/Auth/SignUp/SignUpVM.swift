@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol RegisterViewDelegate {
-    func onValidate(validationErrors: [RegisterVM.FormInput])
+protocol SignUpViewDelegate {
+    func onValidate(validationErrors: [SignUpVM.FormInput])
     func onError(error: String)
-    func onRegisterLogin()
+    func onSignUpSuccess()
     func onOldUser()
 }
 
-class RegisterVM {
+class SignUpVM {
     
     enum FormInput {
         case UserNameTextField(String)
@@ -23,8 +23,8 @@ class RegisterVM {
         case PasswordTextField(String)
     }
     
-    private let delegate: RegisterViewDelegate
-    private let network: NetworkManager = .shared
+    private let delegate: SignUpViewDelegate
+    private let repository: AuthRepository = .init()
     
     private var userName: String? {
         didSet {
@@ -50,7 +50,7 @@ class RegisterVM {
         }
     }
     
-    init(delegate: RegisterViewDelegate) {
+    init(delegate: SignUpViewDelegate) {
         self.delegate = delegate
     }
     
@@ -70,34 +70,19 @@ class RegisterVM {
         self.password = password
     }
     
-    func register() {
-        network.request(endPoint: .Register(RegisterRequest.init(userName: userName!, email: email!, phoneNumber: phoneNumber!, password: password!))) { [weak self] (response: RegisterResponse) in
-            if response.code == 201 {
-                if let token = response.data?.accessToken {
-                    UserDefaults.setAccessToken(token: token)
-                    self?.delegate.onRegisterLogin()
-                }
-                else {
-                    self?.delegate.onError(error: "Something went wrong")
-                }
-            }
-            else {
-                self?.delegate.onError(error: response.message ?? "Something went wrong")
-            }
+    func signUp() {
+        repository.signUp(username: userName!, email: email!, phone: phoneNumber!, password: password!) { [weak self] in
+            self?.delegate.onSignUpSuccess()
         } onFailed: { [weak self] error in
             switch error {
-            case .UNEXPECTED_STATUS_CODE(let code):
-                if code == 409 {
-                    self?.delegate.onOldUser()
-                }
-                else {
-                    self?.delegate.onError(error: "Something went wrong")
-                }
+            case .DUPLICATE_USER:
+                self?.delegate.onOldUser()
+            case .UNKOWN(let error):
+                self?.delegate.onError(error: error)
             default:
-                self?.delegate.onError(error: "Something went wrong")
+                break
             }
         }
-
     }
     
     private func validate() {

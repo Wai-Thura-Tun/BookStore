@@ -9,16 +9,25 @@ import UIKit
 
 class BookListVC: UIViewController, StoryBoarded {
 
+    enum CellType: String {
+        case BANNER
+        case CAROUSEL
+        case GRID
+    }
+    
     static var storyboardName: String = "Home"
     
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var tbBookList: UITableView!
+    
+    private lazy var vm: BookListVM = .init(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpViews()
         setUpBindings()
+        vm.getBooks()
     }
     
     private func setUpViews() {
@@ -39,33 +48,34 @@ class BookListVC: UIViewController, StoryBoarded {
 
 extension BookListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return vm.homeData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BannerCell", for: indexPath) as? BannerCell
-            guard let cell = cell else { return  UITableViewCell.init() }
-            return cell
-        }
-        else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CarouselCell", for: indexPath) as? CarouselCell
-            guard let cell = cell else { return  UITableViewCell.init() }
-            return cell
-        }
-        else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GridCell", for: indexPath) as? GridCell
-            guard let cell = cell else { return UITableViewCell.init() }
-            return cell
-        }
-        else if indexPath.row == 3{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CarouselCell", for: indexPath) as? CarouselCell
-            guard let cell = cell else { return  UITableViewCell.init() }
-            return cell
+        let data = vm.homeData[indexPath.row]
+        if let data = data as? SpecialBookVO, let type = data.type {
+            switch type {
+            case CellType.BANNER.rawValue:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "BannerCell", for: indexPath) as? BannerCell
+                guard let cell = cell else { return  UITableViewCell.init() }
+                cell.data = data
+                return cell
+            case CellType.CAROUSEL.rawValue:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CarouselCell", for: indexPath) as? CarouselCell
+                guard let cell = cell else { return  UITableViewCell.init() }
+                cell.data = data
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GridCell", for: indexPath) as? GridCell
+                guard let cell = cell else { return UITableViewCell.init() }
+                cell.data = data
+                return cell
+            }
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell") as? NormalCell
             guard let cell = cell else { return UITableViewCell.init() }
+            cell.data = data as? BookVO
             return cell
         }
     }
@@ -73,4 +83,25 @@ extension BookListVC: UITableViewDataSource {
 
 extension BookListVC: UITableViewDelegate {
     
+}
+
+extension BookListVC: BookListViewDelegate {
+    func onError(error: String) {
+        showError(error: error)
+    }
+    
+    func onListLoaded() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tbBookList.reloadData()
+        }
+    }
+    
+    private func showError(error message: String) {
+        let alertController = UIAlertController(title: "Error",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction.init(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
 }

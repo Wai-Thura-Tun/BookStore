@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="412" height="175"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-FG-5lW">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-FG-5lW">
                         <rect key="frame" x="0.0" y="0.0" width="412" height="175"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <userDefinedRuntimeAttributes>
@@ -37,6 +37,9 @@
                 <constraint firstAttribute="trailing" secondItem="9gJ-FG-5lW" secondAttribute="trailing" id="s3i-Oz-vv2"/>
             </constraints>
             <size key="customSize" width="412" height="175"/>
+            <connections>
+                <outlet property="imgBookCover" destination="9gJ-FG-5lW" id="R0t-op-7wF"/>
+            </connections>
             <point key="canvasLocation" x="332.82442748091603" y="63.732394366197184"/>
         </collectionViewCell>
     </objects>

@@ -10,6 +10,16 @@ import UIKit
 class GridCell: UITableViewCell {
 
     @IBOutlet weak var cvGrid: DynamicHeightCV!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    var data: SpecialBookVO? {
+        didSet {
+            if let data = data {
+                lblTitle.text = data.title
+                cvGrid.reloadData()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +28,6 @@ class GridCell: UITableViewCell {
         cvGrid.dataSource = self
         cvGrid.delegate = self
         cvGrid.contentInset = .init(top: 0, left: 20, bottom: 0, right: 20)
-        cvGrid.reloadData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,12 +40,13 @@ class GridCell: UITableViewCell {
 
 extension GridCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return data?.books.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridItemCell", for: indexPath) as? GridItemCell
         guard let cell = cell else { return UICollectionViewCell.init() }
+        cell.data = data?.books[indexPath.row]
         return cell
     }
 }
@@ -55,6 +65,8 @@ extension GridCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.frame.width / 2 - 20 - 16 - 20 - 9, height: 268)
+        let totalSpace = 16 + collectionView.contentInset.left + collectionView.contentInset.right
+        let calculatedWidth = collectionView.bounds.width - totalSpace
+        return CGSize.init(width: calculatedWidth / 2, height: 268)
     }
 }
