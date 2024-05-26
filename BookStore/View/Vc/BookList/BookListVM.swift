@@ -14,6 +14,7 @@ protocol BookListViewDelegate {
 
 class BookListVM {
     private let repository: BookRepository = .init()
+    private let authRepository: AuthRepository = .init()
     
     private let delegate: BookListViewDelegate
     
@@ -28,6 +29,7 @@ class BookListVM {
     }
     
     func getBooks() {
+        print(authRepository.getUser())
         repository.getBooks { [weak self] data in
             self?.homeData = data
         } onFailed: { [weak self] error in

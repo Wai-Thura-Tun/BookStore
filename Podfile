@@ -9,4 +9,5 @@ target 'BookStore' do
   pod 'Alamofire'
   pod 'KeychainAccess'
   pod 'Kingfisher', '~> 7.0'
+  pod 'RealmSwift', '~>10'
 end

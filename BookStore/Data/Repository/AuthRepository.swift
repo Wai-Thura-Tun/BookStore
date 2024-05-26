@@ -9,6 +9,7 @@ import Foundation
 
 class AuthRepository {
     private let authRemoteDataSource: AuthRemoteDataSource = .init()
+    private let localDataSource: AuthLocalDataSource = .shared
     
     func login(username: String,
                password: String,
@@ -18,13 +19,23 @@ class AuthRepository {
         authRemoteDataSource.login(
             username: username,
             password: password,
-            onSuccess: { token in
+            onSuccess: { [weak self] token, userEntity  in
                 KeychainManager.shared.setAccessToken(with: token)
                 UserDefaults.setOldUser()
-                onSuccess()
+                do {
+                    try self?.localDataSource.saveUser(with: userEntity)
+                    onSuccess()
+                }
+                catch {
+                    onFailed(.UNKOWN("Something went wrong"))
+                }
             },
             onFailed: onFailed
         )
+    }
+    
+    func getUser() -> UserVO? {
+        return localDataSource.getUser()
     }
     
     func signUp(username: String,
@@ -39,9 +50,16 @@ class AuthRepository {
             email: email,
             phone: phone,
             password: password,
-            onSuccess: { token in
+            onSuccess: { [weak self] token, userEntity  in
                 KeychainManager.shared.setAccessToken(with: token)
                 UserDefaults.setOldUser()
+                do {
+                    try self?.localDataSource.saveUser(with: userEntity)
+                    onSuccess()
+                }
+                catch {
+                    onFailed(.UNKOWN("Something went wrong"))
+                }
             },
             onFailed: onFailed)
     }

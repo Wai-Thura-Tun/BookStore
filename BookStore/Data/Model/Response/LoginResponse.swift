@@ -19,10 +19,22 @@ struct LoginResponse: Codable {
 
 struct LoginVO: Codable {
     let accessToken: String?
+    let userName: String?
+    let email: String?
+    let phoneNumber: String?
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
+        case userName = "user_name"
+        case email
+        case phoneNumber = "phone_number"
     }
 }
 
 typealias RegisterResponse = LoginResponse
+
+struct UserVO {
+    let userName: String
+    let email: String
+    let phoneNumber: String
+}

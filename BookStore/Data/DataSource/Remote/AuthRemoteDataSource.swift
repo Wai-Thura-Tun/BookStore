@@ -20,15 +20,20 @@ class AuthRemoteDataSource {
     
     func login(username: String,
                password: String,
-               onSuccess: @escaping (String) -> (),
+               onSuccess: @escaping (String, UserEntity) -> (),
                onFailed: @escaping (AuthDataError) -> ())
     {
         network.request(endPoint: .Login(
             LoginRequest.init(userName: username,
                               password: password)
         )) { (response: LoginResponse) in
-            if response.code == 0, let token = response.data?.accessToken, !token.isEmpty {
-                onSuccess(token)
+            if response.code == 0, let loginVO = response.data, let token = response.data?.accessToken, !token.isEmpty {
+                let user = UserVO.init(
+                    userName: loginVO.userName ?? "",
+                    email: loginVO.email ?? "",
+                    phoneNumber: loginVO.phoneNumber ?? ""
+                )
+                onSuccess(token, user.toEntity())
             }
             else {
                 onFailed(.UNKOWN("Something went wrong"))
@@ -53,7 +58,7 @@ class AuthRemoteDataSource {
                   email: String,
                   phone: String,
                   password: String,
-                  onSuccess: @escaping (String) -> (),
+                  onSuccess: @escaping (String, UserEntity) -> (),
                   onFailed: @escaping (AuthDataError) -> ())
     {
         network.request(endPoint: .Register(
@@ -62,8 +67,13 @@ class AuthRemoteDataSource {
                                  phoneNumber: phone,
                                  password: password)
         )) { (response: RegisterResponse) in
-            if response.code == 201, let token = response.data?.accessToken, !token.isEmpty {
-                onSuccess(token)
+            if response.code == 201, let registerVO = response.data, let token = response.data?.accessToken, !token.isEmpty {
+                let user = UserVO.init(
+                    userName: registerVO.userName ?? "",
+                    email: registerVO.email ?? "",
+                    phoneNumber: registerVO.phoneNumber ?? ""
+                )
+                onSuccess(token, user.toEntity())
             }
             else {
                 onFailed(.UNKOWN("Something went wrong"))
